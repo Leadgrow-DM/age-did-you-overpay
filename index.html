@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Decision brief: a private, list-only webinar with the predatory pricing attorney on 10 December.">
+<title>Did You Overpay?</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout: single prose column, with the timeline breaking out as a dated rail. */
+  :root {
+    --bg: #f4f6f7;
+    --surface: #ffffff;
+    --fg: #14181c;
+    --muted: #596270;
+    --rule: #dde2e7;
+    --accent: #0f5c6b;
+    --gate: #8a4b14;
+    --gate-bg: #f7efe4;
+    --stop: #8f3030;
+    --stop-bg: #f6eaea;
+    --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --data: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10141a; --surface: #181d24; --fg: #e7eaee; --muted: #9aa4b0;
+      --rule: #29313a; --accent: #58b6c6; --gate: #dba063; --gate-bg: #241c12;
+      --stop: #e08585; --stop-bg: #251618; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10141a; --surface: #181d24; --fg: #e7eaee; --muted: #9aa4b0;
+    --rule: #29313a; --accent: #58b6c6; --gate: #dba063; --gate-bg: #241c12;
+    --stop: #e08585; --stop-bg: #251618; color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg); color: var(--fg); font-family: var(--body);
+    font-size: 1rem; line-height: 1.6;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 0 4rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; }
+  .prose { max-width: 36rem; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  header { border-bottom: 2px solid var(--fg); padding-block: 3rem 1.25rem; margin-bottom: 2.5rem; }
+  .kicker {
+    font-family: var(--data); font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted); margin: 0 0 1.25rem;
+  }
+  h1 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(2.1rem, 7vw, 3.1rem); line-height: 1.02;
+    letter-spacing: -0.025em; margin: 0 0 0.75rem; text-wrap: balance;
+  }
+  .standfirst { font-size: 1.1rem; color: var(--muted); margin: 0; max-width: 34rem; }
+  .byline {
+    font-family: var(--data); font-size: 0.74rem; color: var(--muted);
+    margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem;
+  }
+
+  section { margin-bottom: 3rem; }
+  .label {
+    font-family: var(--data); font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(1.45rem, 4vw, 1.8rem); line-height: 1.15;
+    letter-spacing: -0.015em; margin: 0 0 1rem; text-wrap: balance;
+  }
+  p { margin: 0 0 1rem; }
+
+  .theask {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent); padding: 1.3rem 1.4rem; margin: 1.5rem 0;
+  }
+  .theask p:last-child { margin-bottom: 0; }
+  .theask .q {
+    font-family: var(--display); font-weight: 600; font-size: 1.16rem;
+    line-height: 1.35; letter-spacing: -0.01em;
+  }
+
+  /* Parties */
+  .parties { display: grid; gap: 0; margin-top: 1.5rem; }
+  .party { border-top: 1px solid var(--rule); padding-block: 1.1rem; min-width: 0; }
+  .party:last-child { border-bottom: 1px solid var(--rule); }
+  .party h3 {
+    font-family: var(--data); font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  .party p { margin: 0 0 0.6rem; font-size: 0.96rem; }
+  .party p:last-child { margin-bottom: 0; }
+  .party .cost { color: var(--muted); font-size: 0.89rem; }
+
+  /* Timeline */
+  .tl { margin-top: 1.5rem; display: grid; gap: 0; }
+  .ev {
+    display: grid; grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: 0 1.25rem; border-top: 1px solid var(--rule); padding-block: 0.9rem;
+  }
+  .ev:last-child { border-bottom: 1px solid var(--rule); }
+  .ev .when {
+    font-family: var(--data); font-size: 0.8rem; font-variant-numeric: tabular-nums;
+    color: var(--muted); padding-top: 0.12rem;
+  }
+  .ev .what { min-width: 0; font-size: 0.96rem; }
+  .ev .what strong { font-weight: 600; }
+  .ev .owner {
+    display: block; font-family: var(--data); font-size: 0.74rem;
+    color: var(--muted); margin-top: 0.3rem;
+  }
+  .ev.is-gate { background: var(--gate-bg); }
+  .ev.is-gate .when, .ev.is-gate .what strong { color: var(--gate); }
+  .ev.is-dark { background: var(--stop-bg); }
+  .ev.is-dark .when, .ev.is-dark .what { color: var(--stop); }
+  .ev.is-event { background: var(--surface); }
+  .ev.is-event .what strong { font-family: var(--display); font-size: 1.1rem; }
+  @media (max-width: 30rem) {
+    .ev { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
+    .ev .when { padding-top: 0; }
+  }
+
+  /* Risks */
+  .risks { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0; }
+  .risks li { border-top: 1px solid var(--rule); padding-block: 1.05rem; min-width: 0; }
+  .risks li:last-child { border-bottom: 1px solid var(--rule); }
+  .risks .rname { font-weight: 600; }
+  .risks .flag {
+    font-family: var(--data); font-size: 0.66rem; letter-spacing: 0.09em;
+    text-transform: uppercase; padding: 0.14rem 0.45rem; margin-left: 0.5rem;
+    border: 1px solid currentColor; vertical-align: 0.1em; white-space: nowrap;
+  }
+  .risks .flag.block { color: var(--stop); }
+  .risks .flag.watch { color: var(--gate); }
+  .risks .flag.ok { color: var(--muted); }
+  .risks p { margin: 0.4rem 0 0; font-size: 0.95rem; }
+  .risks .fix { color: var(--muted); font-size: 0.9rem; }
+
+  footer {
+    border-top: 2px solid var(--fg); margin-top: 3.5rem; padding-top: 1.25rem;
+    font-size: 0.86rem; color: var(--muted); max-width: 34rem;
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important } }
+</style>
+<style>
+  html { color-scheme: light; }
+  @media (prefers-color-scheme: dark) { html { color-scheme: dark; } }
+  body { margin: 0; }
+  img { max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="kicker">Decision brief &middot; American Gold Exchange</p>
+    <h1>Did You Overpay?</h1>
+    <p class="standfirst">One hour with the Dallas attorney who goes after predatory pricing in precious metals. Your email list only, Thursday 10 December. What each party gets out of it, what a yes sets in motion, and the three things that would stop it.</p>
+    <p class="byline">
+      <span>Prepared for Dana Samuelson</span>
+      <span>Cynthia Dalton, LeadGrow</span>
+      <span>18 November 2026</span>
+    </p>
+  </header>
+
+  <section class="prose">
+    <span class="label">The ask</span>
+    <h2>One hour, one list, nothing public</h2>
+    <p>You said you did not think he would do it. That is probably because the version in your head is publicity, and publicity is the one thing he has told you he does not want. So do not ask for that.</p>
+    <div class="theask">
+      <p class="q">Would you spend an hour with my email list, privately, explaining how predatory pricing works and how someone would know if it happened to them?</p>
+      <p>No recording released outside the list. No social. No press. Your name withheld from the invite if you would rather. You can read the invite before it goes.</p>
+    </div>
+    <p>That is a different question from the one he already declined. He is not being asked to advertise. He is being asked to spend an hour in a closed room with people who match his client profile exactly, assembled by someone who has already sent him business.</p>
+    <p>Worth saying out loud on the call: you have referred clients to him before. That makes this a continuation of something that works, not a favor.</p>
+  </section>
+
+  <section>
+    <div class="prose">
+      <span class="label">What each party gets</span>
+      <h2>Why this works for everyone in the room</h2>
+    </div>
+    <div class="parties">
+      <div class="party">
+        <h3>The attorney</h3>
+        <p>An audience that is precisely his buyer profile, gathered by someone they already trust. The referral record is established rather than theoretical. No advertising cost, and no competitive signal, because nothing leaves the list.</p>
+        <p class="cost">Costs him: 60 minutes live, plus a 20 minute prep call.</p>
+      </div>
+      <div class="party">
+        <h3>You and AGE</h3>
+        <p>Something no competitor in the category is offering. It positions you as the honest operator by contrast rather than by assertion, which is the only way that claim ever lands. It also surfaces the subscribers who were overcharged somewhere else and do not know it yet. One already found you on his own, after paying for roughly half the metal he should have received.</p>
+        <p class="cost">Costs you: one send sequence, one hour live, and the hosting time.</p>
+      </div>
+      <div class="party">
+        <h3>Your buying clients</h3>
+        <p>How predatory pricing actually works, how to tell whether it happened to them, what recourse exists, and who to call. For anyone it has happened to, this is the most useful hour they will get from a metals dealer this year.</p>
+        <p class="cost">Costs them: an hour, and only if they choose to attend.</p>
+      </div>
+      <div class="party">
+        <h3>The subscribers who have never bought</h3>
+        <p>The same hour. These are the people who read your emails and have never placed an order. Being served before being sold to is the entire argument for running this as education rather than promotion.</p>
+        <p class="cost">Costs them: an hour.</p>
+      </div>
+      <div class="party">
+        <h3>LeadGrow</h3>
+        <p>A repeatable interview format for the evergreen lane, tested on a topic that is already warm. It also forces the first real end to end test of the evaluation page, which currently has no working path from an appearance to a captured lead.</p>
+        <p class="cost">Costs us: the build, the copy, and the send sequence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="prose">
+      <span class="label">If it is a yes</span>
+      <h2>What a yes sets in motion</h2>
+      <p>Three gates, marked below. Each one stops the work if it does not clear, so nothing gets built on an unconfirmed guest. Everything that needs you is finished before AGE closes for Thanksgiving.</p>
+    </div>
+    <div class="tl">
+      <div class="ev is-gate">
+        <div class="when">Thu 19 Nov</div>
+        <div class="what"><strong>Gate 1.</strong> You ask him. By phone, not email, because a competition objection needs a conversation and not a paragraph. Ask for Thursday 10 December.
+          <span class="owner">You</span></div>
+      </div>
+      <div class="ev is-gate">
+        <div class="when">Mon 23 Nov</div>
+        <div class="what"><strong>Gate 1 closes.</strong> A no ends it here and nothing further gets built. A yes moves straight to the prep call, 20 minutes, to agree the scope, the confidentiality terms, whether his name appears, and whether a replay may go to the list.
+          <span class="owner">You and the attorney</span></div>
+      </div>
+      <div class="ev is-gate">
+        <div class="when">Tue 24 Nov</div>
+        <div class="what"><strong>Gate 2.</strong> Platform confirmed, and confirmed in writing who can send to the list on 1, 7, 9 and 14 December. Lala is briefed the same day, the build starts, and the copy gets drafted.
+          <span class="owner">Cynthia and you</span></div>
+      </div>
+      <div class="ev is-gate">
+        <div class="when">Wed 25 Nov</div>
+        <div class="what"><strong>Gate 3.</strong> You approve the copy. AGE half day and your last working day before the holiday, which is exactly why it sits here.
+          <span class="owner">You</span></div>
+      </div>
+      <div class="ev">
+        <div class="when">Thu 26 Nov</div>
+        <div class="what">Team keeps building. Thanksgiving, and AGE is closed, but the team is in the Philippines and does not observe it, so the day is not lost.
+          <span class="owner">Lala and team</span></div>
+      </div>
+      <div class="ev">
+        <div class="when">Fri 27 Nov</div>
+        <div class="what">Page live, form wired, and the whole path tested end to end with a real address. Nothing needed from you.
+          <span class="owner">Cynthia with the team</span></div>
+      </div>
+      <div class="ev">
+        <div class="when">Mon 30 Nov</div>
+        <div class="what">Buffer day. Fix anything the test turned up. No send today either way: it is Cyber Monday and the inbox is the worst it will be all year.
+          <span class="owner">Lala and team</span></div>
+      </div>
+      <div class="ev">
+        <div class="when">Tue 1 Dec</div>
+        <div class="what"><strong>Send 1.</strong> Invite to the full list. First clear day after the holiday weekend.</div>
+      </div>
+      <div class="ev">
+        <div class="when">Fri 4 Dec</div>
+        <div class="what">Platform rehearsal with the attorney, 15 minutes. Audio, screen share, and the entry link he will use.
+          <span class="owner">You, the attorney, Cynthia</span></div>
+      </div>
+      <div class="ev">
+        <div class="when">Mon 7 Dec</div>
+        <div class="what"><strong>Send 2.</strong> Invite again, on your normal Monday cadence.</div>
+      </div>
+      <div class="ev">
+        <div class="when">Wed 9 Dec</div>
+        <div class="what"><strong>Send 3.</strong> Reminder to registrants, the day before.</div>
+      </div>
+      <div class="ev is-event">
+        <div class="when">Thu 10 Dec</div>
+        <div class="what"><strong>The webinar.</strong> One hour. You host and interview, he answers. Your own case stays out of it.
+          <span class="owner">You</span></div>
+      </div>
+      <div class="ev is-dark">
+        <div class="when">Fri 11 Dec</div>
+        <div class="what">Nothing scheduled. The Austin dinner is still pending confirmation for this date.</div>
+      </div>
+      <div class="ev">
+        <div class="when">Mon 14 Dec</div>
+        <div class="what"><strong>Send 4.</strong> Replay and follow-up to registrants and non-attendees, with the evaluation page as the one call to action. Monday, on cadence again.</div>
+      </div>
+      <div class="ev">
+        <div class="when">Thu 17 Dec</div>
+        <div class="what">Attribution read. Registrations, attendance, replay views, and evaluation requests, against where they came from.
+          <span class="owner">Cynthia</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="prose">
+      <span class="label">What stops this</span>
+      <h2>Ordered by what is most likely to kill the date</h2>
+    </div>
+    <ul class="risks">
+      <li>
+        <span class="rname">The email system</span><span class="flag block">Blocking</span>
+        <p>Four sends sit in this plan and you cannot send to your own list without your partner present. The November replay stalled for exactly this reason, and Bill leaves on 1 January.</p>
+        <p class="fix">Get it in writing, before he is given a date, who is sending on 1, 7, 9 and 14 December. If nobody can commit to all four, the date moves.</p>
+      </li>
+      <li>
+        <span class="rname">The platform</span><span class="flag block">Blocking</span>
+        <p>StreamYard collected registrants for the Jeff Snyder webinar and then delivered the stream to every connected platform except them. Not one registrant got in.</p>
+        <p class="fix">Something built for registrant facing events, tested with a real address before the invite goes. Gate 2 covers it.</p>
+      </li>
+      <li>
+        <span class="rname">He says no</span><span class="flag watch">Gate 1</span>
+        <p>His stated objection is competition, and your own prediction is that he declines.</p>
+        <p class="fix">Lead with what is not happening. The ask is an hour with a private list, not publicity.</p>
+      </li>
+      <li>
+        <span class="rname">Your expert witness case</span><span class="flag watch">Prep call</span>
+        <p>You are the expert witness in a case with trial now looking like 1 February in Dallas, six and a half years in. Nothing here can be allowed to jeopardize it.</p>
+        <p class="fix">Agree the boundary in the prep call and write it into the host script. Your case is not the subject. His practice is.</p>
+      </li>
+      <li>
+        <span class="rname">The website launch</span><span class="flag watch">Open</span>
+        <p>Jason now says December, after security issues surfaced. He is heads down, and Joe is the one who has to build the form this plan needs.</p>
+        <p class="fix">Keep the registration page on the old site, where Joe has already shipped once. This cannot depend on the new site going live.</p>
+      </li>
+      <li>
+        <span class="rname">Holiday attention</span><span class="flag ok">Accepted</span>
+        <p>10 December beats the worst of it, but the list is thinner in December than it will be in January.</p>
+        <p class="fix">Accept it. The replay carries the value, and the topic does not expire.</p>
+      </li>
+      <li>
+        <span class="rname">Attribution</span><span class="flag ok">In progress</span>
+        <p>There is no working path today from an appearance to a captured lead. The evaluation page exists, is not linked in the menu, and asks people to send an email rather than fill in a form.</p>
+        <p class="fix">It has to be fixed for this anyway, so let this event pay for the fix.</p>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>The one date that cannot slip is Gate 1. If his answer comes after Monday 23 November, approval moves to the 30th and the first send still goes out on the 1st. You lose the buffer, not the date.</p>
+    <p>For informational purposes only and not investment or legal advice.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
